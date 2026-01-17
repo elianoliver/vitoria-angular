@@ -1,0 +1,127 @@
+<section id="comprar" class="py-16 md:py-24 bg-gradient-to-br from-gray-900 via-[#1E3A8A] to-gray-900 relative overflow-hidden">
+  <!-- Elementos decorativos -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 right-10 w-64 h-64 rounded-full bg-[#FF6B35]/10 blur-3xl animate-pulse-blob"></div>
+    <div class="absolute bottom-20 left-10 w-64 h-64 rounded-full bg-[#FDB813]/10 blur-3xl animate-pulse-blob-2"></div>
+  </div>
+
+  <div class="container mx-auto px-4 md:px-6 relative z-10">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4">
+        Transforme seu negócio
+        <span class="bg-gradient-to-r from-[#FF6B35] to-[#FDB813] bg-clip-text text-transparent">
+          hoje
+        </span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+        Invista no seu futuro empreendedor agora
+      </p>
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+      <app-card class="p-8 md:p-10 relative overflow-hidden border-4 border-[#FF6B35]/30 shadow-2xl bg-white">
+        <!-- Badge de oferta -->
+        <div class="absolute -top-3 -right-3 animate-rotate-badge">
+          <app-badge variant="default" class="px-4 py-2 text-sm font-bold shadow-lg">
+            🔥 Oferta Digital
+          </app-badge>
+        </div>
+
+        <!-- Preço -->
+        <div class="text-center mb-8">
+          <div class="mb-2">
+            <span class="text-gray-400 line-through text-2xl font-semibold">
+              R$ {{ config.product.oldPrice.toFixed(2).replace('.', ',') }}
+            </span>
+          </div>
+          <div class="flex items-baseline justify-center gap-2 mb-4">
+            <span class="text-gray-600 text-3xl font-bold">R$</span>
+            <span class="text-6xl md:text-7xl font-extrabold text-gradient">
+              {{ config.product.price.toFixed(0) }}
+            </span>
+            <span class="text-gray-600 text-2xl font-bold">,00</span>
+          </div>
+          <p class="text-gray-600 font-medium text-lg">
+            ou 12x de R$ {{ (config.product.price / 12).toFixed(2).replace('.', ',') }} sem juros
+          </p>
+        </div>
+
+        <!-- Inclusos -->
+        <div class="mb-8 space-y-3">
+          @for (item of includes; track item.text) {
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="w-6 h-6 rounded-full bg-[#10B981]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <lucide-icon name="check" class="w-4 h-4 text-[#10B981]" />
+              </div>
+              <span class="text-gray-700 font-medium text-base">
+                {{ item.text }}
+              </span>
+            </div>
+          }
+        </div>
+
+        <!-- CTA Principal -->
+        <div>
+          <app-button
+            (onClick)="handlePurchase()"
+            size="lg"
+            variant="default"
+            class="w-full h-16 text-xl font-bold shadow-2xl hover:shadow-[0_0_50px_rgba(255,107,53,0.6)] transition-all duration-300 hover:scale-105 animate-pulse-glow group mb-6"
+          >
+            COMPRAR AGORA NA HOTMART
+            <lucide-icon name="arrow-right" class="ml-2 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+          </app-button>
+
+              <!-- Garantia destacada -->
+              <div class="flex items-center justify-center gap-2 text-center mb-6">
+                <lucide-icon name="shield-check" class="w-6 h-6 text-[#10B981]" />
+                <p class="text-gray-700 font-semibold text-base">
+                  Garantia de 7 dias - 100% do seu dinheiro de volta
+                </p>
+              </div>
+
+              <!-- Métodos de pagamento -->
+              <div class="space-y-3">
+                <div class="flex items-center justify-center gap-2 text-gray-500 text-sm">
+                  <lucide-icon name="credit-card" class="w-4 h-4" />
+                  <span class="font-medium">Pagamento 100% Seguro</span>
+                </div>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+              @for (method of paymentMethods; track method.name) {
+                <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg border border-gray-200">
+                  <span class="text-xl">{{ method.icon }}</span>
+                  <span class="text-sm font-medium text-gray-700">
+                    {{ method.name }}
+                  </span>
+                </div>
+              }
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-4">
+              🔒 Acesso imediato após pagamento confirmado
+            </p>
+          </div>
+        </div>
+      </app-card>
+    </div>
+
+    <!-- Trust reinforcement -->
+    <div class="mt-12 text-center">
+      <div class="inline-flex items-center gap-6 px-8 py-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+        <div class="text-center">
+          <p class="text-3xl font-bold text-white">500+</p>
+          <p class="text-sm text-gray-300">Clientes Satisfeitos</p>
+        </div>
+        <div class="w-px h-12 bg-white/20"></div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-white">4.9/5</p>
+          <p class="text-sm text-gray-300">Avaliação Média</p>
+        </div>
+        <div class="w-px h-12 bg-white/20"></div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-white">100%</p>
+          <p class="text-sm text-gray-300">Garantido</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

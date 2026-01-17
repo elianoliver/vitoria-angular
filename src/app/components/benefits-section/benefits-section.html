@@ -1,0 +1,52 @@
+<section id="beneficios" class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+        O que você vai
+        <span class="text-gradient"> aprender</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+        Conteúdo estratégico e prático que vai acelerar sua jornada empreendedora
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      @for (benefit of benefits; track benefit.title) {
+        <app-card class="p-6 h-full hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-transparent group relative overflow-hidden bg-white">
+          <div class="relative z-10">
+            <!-- Ícone -->
+            <div [class]="'w-14 h-14 rounded-2xl bg-gradient-to-br ' + benefit.color + ' flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300'">
+              <span class="text-white text-2xl">{{ benefit.icon }}</span>
+            </div>
+
+            <!-- Título -->
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              {{ benefit.title }}
+            </h3>
+
+            <!-- Descrição -->
+            <p class="text-gray-600 mb-4 leading-relaxed text-base">
+              {{ benefit.description }}
+            </p>
+
+            <!-- Problema e Resultado -->
+            <div class="space-y-2 pt-4 border-t border-gray-100">
+              <div class="flex items-start gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0"></div>
+                <p class="text-sm text-gray-500">
+                  <span class="font-medium">Problema:</span> {{ benefit.problem }}
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0"></div>
+                <p class="text-sm text-gray-700">
+                  <span class="font-medium">Resultado:</span> {{ benefit.result }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </app-card>
+      }
+    </div>
+  </div>
+</section>

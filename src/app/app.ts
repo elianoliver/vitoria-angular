@@ -1,12 +1,27 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Header } from './components/header/header';
+import { Hero } from './components/hero/hero';
+import { BenefitsSection } from './components/benefits-section/benefits-section';
+import { SocialProof } from './components/social-proof/social-proof';
+import { PricingSection } from './components/pricing-section/pricing-section';
+import { FAQSection } from './components/faq-section/faq-section';
+import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    RouterOutlet,
+    Header,
+    Hero,
+    BenefitsSection,
+    SocialProof,
+    PricingSection,
+    FAQSection,
+    Footer
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('vitoria-angular');
 }

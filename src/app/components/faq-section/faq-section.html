@@ -1,0 +1,58 @@
+<section id="faq" class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 md:mb-16">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#FDB813] mb-6">
+        <lucide-icon name="help-circle" class="w-8 h-8 text-white" />
+      </div>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+        Perguntas
+        <span class="text-gradient"> Frequentes</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+        Tire suas dúvidas antes de fazer seu investimento
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-4">
+        @for (faq of faqs; track faq.question) {
+          <app-card class="border-2 border-gray-200 rounded-xl px-6 hover:border-[#FF6B35]/30 transition-all bg-white shadow-sm hover:shadow-md">
+            <button
+              (click)="toggleFaq($index)"
+              class="w-full py-5 text-left flex items-center justify-between hover:no-underline"
+            >
+              <span class="font-bold text-gray-900 pr-4 text-base md:text-lg">
+                {{ faq.question }}
+              </span>
+              <lucide-icon
+                name="chevron-down"
+                [class.rotate-180]="openFaqs().includes($index)"
+                class="w-5 h-5 text-[#FF6B35] transition-transform flex-shrink-0"
+              />
+            </button>
+            @if (openFaqs().includes($index)) {
+              <div class="pb-5 pt-2 text-gray-700 leading-relaxed text-base">
+                {{ faq.answer }}
+              </div>
+            }
+          </app-card>
+        }
+      </div>
+    </div>
+
+    <!-- CTA adicional -->
+    <div class="text-center mt-12">
+      <app-card class="inline-block p-6 bg-gradient-to-r from-[#FF6B35]/10 to-[#FDB813]/10 border-2 border-[#FF6B35]/20">
+        <p class="text-gray-700 mb-2">
+          Ainda tem dúvidas?
+        </p>
+        <a
+          [href]="'mailto:' + config.email"
+          class="text-[#FF6B35] font-bold hover:text-[#FF8555] transition-colors underline text-base"
+        >
+          Entre em contato conosco
+        </a>
+      </app-card>
+    </div>
+  </div>
+</section>
