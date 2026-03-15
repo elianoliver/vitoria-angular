@@ -11,6 +11,7 @@ import { LucideAngularModule } from 'lucide-angular';
   imports: [CommonModule, Button, Badge, LucideAngularModule],
   templateUrl: './hero.html',
 })
+
 export class Hero {
   handleCTA() {
     window.open(config.checkoutUrl, '_blank', 'noopener,noreferrer');

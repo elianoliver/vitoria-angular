@@ -1,9 +1,9 @@
-import { Component, OnInit, HostListener, signal } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Inject } from '@angular/core';
-import { Button } from '../../shared/button/button';
-import { config } from '../../config';
+import { Component, Inject, signal } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
+
+import { config } from '../../config';
+import { Button } from '../../shared/button/button';
 
 @Component({
   selector: 'app-header',
@@ -11,52 +11,19 @@ import { LucideAngularModule } from 'lucide-angular';
   imports: [CommonModule, Button, LucideAngularModule],
   templateUrl: './header.html',
 })
-export class Header implements OnInit {
-  isScrolled = signal(false);
+export class Header {
   mobileMenuOpen = signal(false);
 
   menuItems = [
     { label: 'Início', href: '#hero' },
-    { label: 'Benefícios', href: '#beneficios' },
     { label: 'Depoimentos', href: '#depoimentos' },
+    { label: 'Benefícios', href: '#beneficios' },
     { label: 'Conteúdo', href: '#preview' },
+    { label: 'Comprar', href: '#comprar' },
     { label: 'FAQ', href: '#faq' },
   ];
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
-
-  ngOnInit() {
-    this.checkScroll();
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.checkScroll();
-  }
-
-  checkScroll() {
-    this.isScrolled.set(window.scrollY > 20);
-  }
-
-  get headerClasses(): string {
-    return this.isScrolled()
-      ? 'bg-white/95 backdrop-blur-md shadow-lg'
-      : 'bg-transparent';
-  }
-
-  get logoTextClasses(): string {
-    return this.isScrolled() ? 'text-gray-900' : 'text-white';
-  }
-
-  get navLinkClasses(): string {
-    return this.isScrolled() ? 'text-gray-700' : 'text-white/90';
-  }
-
-  get mobileMenuButtonClasses(): string {
-    return this.isScrolled()
-      ? 'text-gray-900 hover:bg-gray-100'
-      : 'text-white hover:bg-white/10';
-  }
 
   toggleMobileMenu() {
     this.mobileMenuOpen.update(value => !value);
@@ -65,14 +32,12 @@ export class Header implements OnInit {
   handleNavClick(event: Event, href: string) {
     event.preventDefault();
     this.mobileMenuOpen.set(false);
+
     const element = this.document.querySelector(href);
     if (element) {
       const headerHeight = 80;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - headerHeight,
-        behavior: 'smooth'
-      });
+      const top = element.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   }
 

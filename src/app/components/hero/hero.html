@@ -1,9 +1,18 @@
-<section id="hero" class="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-[#1E3A8A] via-[#FF6B35] to-[#FDB813]">
+<section
+  id="hero"
+  class="relative min-h-[70vh] md:min-h-screen flex items-center overflow-hidden bg-linear-to-br from-[#1E3A8A] via-[#FF6B35] to-[#FDB813]"
+>
   <!-- Partículas de fundo decorativas -->
   <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute top-20 left-10 w-20 h-20 rounded-full bg-white/10 blur-xl animate-float-particle-1"></div>
-    <div class="absolute top-40 right-20 w-32 h-32 rounded-full bg-[#FDB813]/20 blur-2xl animate-float-particle-2"></div>
-    <div class="absolute bottom-20 left-1/4 w-24 h-24 rounded-full bg-white/10 blur-xl animate-float-particle-3"></div>
+    <div
+      class="absolute top-20 left-10 w-20 h-20 rounded-full bg-white/25 blur-xl animate-float-particle-1"
+    ></div>
+    <div
+      class="absolute top-40 right-20 w-32 h-32 rounded-full bg-[#FDB813]/25 blur-2xl animate-float-particle-2"
+    ></div>
+    <div
+      class="absolute bottom-20 left-1/4 w-24 h-24 rounded-full bg-white/25 blur-xl animate-float-particle-3"
+    ></div>
   </div>
 
   <div class="container mx-auto px-4 md:px-6 relative z-10">
@@ -14,12 +23,13 @@
           Do Tabuleiro ao
           <span class="relative inline-block">
             <span class="relative z-10">Mercado</span>
-            <span class="absolute bottom-2 left-0 w-full h-3 bg-[#FDB813]"></span>
+            <span class="absolute -bottom-1.5 rounded-2xl left-0 w-full h-2 bg-[#FDB813]"></span>
           </span>
         </h1>
 
         <p class="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0">
-          Aprenda empreendedorismo de forma dinâmica e revolucionária através do nosso e-book exclusivo
+          Aprenda empreendedorismo de forma dinâmica e revolucionária através do nosso e-book
+          exclusivo
         </p>
 
         <!-- CTA Principal -->
@@ -31,23 +41,26 @@
             class="h-14 px-8 md:px-12 text-base md:text-lg font-bold shadow-2xl hover:shadow-[0_0_40px_rgba(255,107,53,0.5)] transition-all duration-300 hover:scale-105 animate-pulse-glow group"
           >
             GARANTIR MEU E-BOOK
-            <lucide-icon name="arrow-right" class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <lucide-icon
+              name="arrow-right"
+              class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
+            />
           </app-button>
         </div>
 
         <!-- Trust Badges -->
         <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-          <app-badge variant="secondary" class="px-4 py-2">
+          <app-badge variant="default" class="px-4 py-2">
             <lucide-icon name="download" class="w-4 h-4 mr-2" />
             100% Digital
           </app-badge>
-          
-          <app-badge variant="secondary" class="px-4 py-2">
+
+          <app-badge variant="default" class="px-4 py-2">
             <lucide-icon name="zap" class="w-4 h-4 mr-2" />
             Acesso Imediato
           </app-badge>
-          
-          <app-badge variant="secondary" class="px-4 py-2">
+
+          <app-badge variant="default" class="px-4 py-2">
             <lucide-icon name="shield-check" class="w-4 h-4 mr-2" />
             Garantia 7 dias
           </app-badge>
@@ -56,20 +69,14 @@
 
       <!-- Imagem do E-book -->
       <div class="relative flex justify-center lg:justify-end">
-        <div class="relative w-full max-w-md animate-float-ebook">
-          <!-- Sombra projetada -->
-          <div class="absolute inset-0 bg-gradient-to-br from-[#FF6B35]/30 to-[#FDB813]/30 blur-3xl transform translate-y-8"></div>
-          
+        <div class="relative w-full  animate-float-ebook">
           <!-- Placeholder para imagem do e-book -->
-          <div class="relative bg-white rounded-2xl shadow-2xl p-8 aspect-[3/4]">
-            <div class="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#FF6B35] rounded-xl flex items-center justify-center">
-              <div class="text-center text-white p-6">
-                <div class="text-6xl mb-4">📚</div>
-                <h3 class="text-2xl font-bold mb-2">Do Tabuleiro ao Mercado</h3>
-                <p class="text-sm opacity-90">E-book Exclusivo</p>
-              </div>
-            </div>
-          </div>
+          <img
+            src="/book.png"
+            alt="Logo Do Tabuleiro ao Mercado"
+            class="w-full"
+            draggable="false"
+          />
         </div>
       </div>
     </div>
