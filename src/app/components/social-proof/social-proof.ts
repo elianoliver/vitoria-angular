@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { Card } from '../../shared/card/card';
 import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-social-proof',
   standalone: true,
-  imports: [Card, LucideAngularModule],
+  imports: [LucideAngularModule],
   templateUrl: './social-proof.html',
 })
 export class SocialProof {

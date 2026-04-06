@@ -1,58 +1,62 @@
-<section id="faq" class="py-16 md:py-24 bg-white">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="text-center mb-12 md:mb-16">
-      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#FDB813] mb-6">
-        <lucide-icon name="help-circle" class="w-8 h-8 text-white" />
+<section id="faq" class="py-[clamp(3rem,8vh,6rem)] bg-white">
+  <div class="mx-auto px-[clamp(1rem,5vw,3.5rem)] w-full max-w-7xl">
+    <div class="text-center mb-[clamp(2rem,5vh,4rem)]">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#FDB813] mb-4">
+        <lucide-icon name="help-circle" class="w-7 h-7 text-white" />
       </div>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+      <h2 class="font-extrabold text-gray-900 mb-4"
+          style="font-size: clamp(1.75rem, 4vw + 0.25rem, 3rem);">
         Perguntas
         <span class="text-gradient"> Frequentes</span>
       </h2>
-      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="text-gray-600 mx-auto max-w-2xl"
+         style="font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);">
         Tire suas dúvidas antes de fazer seu investimento
       </p>
     </div>
 
     <div class="max-w-3xl mx-auto">
-      <div class="space-y-4">
+      <div class="space-y-3">
         @for (faq of faqs; track faq.question) {
-          <app-card class="border-2 border-gray-200 rounded-xl px-6 hover:border-[#FF6B35]/30 transition-all bg-white shadow-sm hover:shadow-md">
+          <div class="rounded-xl border border-gray-200 bg-white shadow-sm transition-colors hover:border-[#FF6B35]/30">
             <button
               (click)="toggleFaq($index)"
-              class="w-full py-5 text-left flex items-center justify-between hover:no-underline"
+              class="w-full px-5 py-5 text-left flex items-center justify-between hover:no-underline"
             >
-              <span class="font-bold text-gray-900 pr-4 text-base md:text-lg">
+              <span class="font-bold text-gray-900 pr-4" style="font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1.125rem);">
                 {{ faq.question }}
               </span>
               <lucide-icon
                 name="chevron-down"
                 [class.rotate-180]="openFaqs().includes($index)"
-                class="w-5 h-5 text-[#FF6B35] transition-transform flex-shrink-0"
+                class="w-5 h-5 text-[#FF6B35] transition-transform shrink-0"
               />
             </button>
             @if (openFaqs().includes($index)) {
-              <div class="pb-5 pt-2 text-gray-700 leading-relaxed text-base">
+              <div class="px-5 pb-5 pt-1 text-gray-700 leading-relaxed"
+                   style="font-size: clamp(0.875rem, 1.5vw, 1rem);">
                 {{ faq.answer }}
               </div>
             }
-          </app-card>
+          </div>
         }
       </div>
     </div>
 
     <!-- CTA adicional -->
-    <div class="text-center mt-12">
-      <app-card class="inline-block p-6 bg-gradient-to-r from-[#FF6B35]/10 to-[#FDB813]/10 border-2 border-[#FF6B35]/20">
-        <p class="text-gray-700 mb-2">
+    <div class="text-center mt-10">
+      <div class="inline-block px-6 py-5 bg-gradient-to-r from-[#FF6B35]/10 to-[#FDB813]/10 rounded-xl border border-[#FF6B35]/20">
+        <p class="text-gray-700 mb-1" style="font-size: clamp(0.875rem, 1.5vw, 1rem);">
           Ainda tem dúvidas?
         </p>
         <a
           [href]="'mailto:' + config.email"
-          class="text-[#FF6B35] font-bold hover:text-[#FF8555] transition-colors underline text-base"
+          class="text-[#FF6B35] font-bold hover:text-[#FF8555] transition-colors underline"
+          style="font-size: clamp(0.875rem, 1.5vw, 1rem);"
         >
           Entre em contato conosco
         </a>
-      </app-card>
+      </div>
     </div>
   </div>
 </section>

@@ -21,9 +21,9 @@
       <div class="text-center lg:text-left flex flex-col justify-center">
         <h1 class="font-extrabold text-white leading-tight mb-[clamp(1rem,2vh,1.5rem)]"
             style="font-size: clamp(2rem, calc(5vw + 0.5rem), 3.75rem);">
-          Do Tabuleiro ao
+          Do <span class="text-gradient">Tabuleiro</span> ao
           <span class="relative inline-block">
-            <span class="relative z-10">Mercado</span>
+            <span class="relative z-10 text-gradient">Mercado</span>
             <span class="absolute -bottom-1.5 rounded-2xl left-0 w-full h-1 bg-[#FDB813]"></span>
           </span>
         </h1>
@@ -36,8 +36,7 @@
 
         <!-- CTA Principal -->
         <div class="mb-[clamp(1.5rem,3vh,2rem)]">
-          <button
-            (click)="handleCTA()"
+          <a href="#comprar"
             class="w-full h-[clamp(3rem,6vh,3.5rem)] px-[clamp(2rem,6vw,3rem)] text-white inline-flex items-center justify-center cursor-pointer rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-gradient-to-r from-[#FF6B35] to-[#FDB813] hover:from-[#FF8555] hover:to-[#FDCA33] shadow-2xl hover:shadow-xl hover:scale-105 group"
             style="font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1.125rem);"
           >
@@ -46,7 +45,7 @@
               name="arrow-right"
               class="ml-2 w-[1.25em] h-[1.25em] group-hover:translate-x-1 transition-transform"
             />
-          </button>
+          </a>
         </div>
 
         <!-- Trust Badges -->

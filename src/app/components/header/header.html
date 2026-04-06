@@ -1,6 +1,6 @@
 <header class="fixed top-4 z-50 w-full">
   <div class="flex justify-center px-4">
-    <div class="container max-w-7xl bg-white/90 backdrop-blur shadow-md rounded-full">
+    <div class="container max-w-7xl bg-white/90 backdrop-blur shadow-md rounded-4xl">
       <div class="flex items-center justify-between px-6 py-3">
 
         <!-- LOGO -->
@@ -55,7 +55,7 @@
             <a
               [href]="item.href"
               (click)="handleNavClick($event, item.href)"
-              class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 font-medium transition-colors"
+              class="block px-6 py-3 text-center text-sm text-gray-700 hover:bg-gray-50 font-medium transition-colors"
             >
               {{ item.label }}
             </a>

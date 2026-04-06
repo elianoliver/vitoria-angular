@@ -1,22 +1,33 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import {
+  ApplicationConfig,
+  provideBrowserGlobalErrorListeners,
+  importProvidersFrom,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { 
-  ShoppingCart, 
-  Menu, 
-  X, 
-  ArrowRight, 
-  ShieldCheck, 
-  Zap, 
-  Download, 
-  Check, 
-  CreditCard, 
-  HelpCircle, 
-  ChevronDown, 
-  Mail, 
-  Star, 
-  Quote 
+
+import {
+  LucideAngularModule,
+  ArrowRight,
+  Download,
+  Zap,
+  ShieldCheck,
+  ShoppingCart,
+  Mail,
+  Quote,
+  Star,
+  HelpCircle,
+  ChevronDown,
+  Check,
+  X,
+  CreditCard,
+  Target,
+  Lightbulb,
+  TrendingUp,
+  Users,
+  BookOpen,
+  Infinity as LucideInfinity,
+  Menu,
 } from 'lucide-angular';
-import { LucideAngularModule } from 'lucide-angular';
 
 import { routes } from './app.routes';
 
@@ -24,21 +35,29 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    ...LucideAngularModule.pick({
-      ShoppingCart,
-      Menu,
-      X,
-      ArrowRight,
-      ShieldCheck,
-      Zap,
-      Download,
-      Check,
-      CreditCard,
-      HelpCircle,
-      ChevronDown,
-      Mail,
-      Star,
-      Quote
-    }).providers || []
-  ]
+    importProvidersFrom(
+      LucideAngularModule.pick({
+        ArrowRight,
+        Download,
+        Zap,
+        ShieldCheck,
+        ShoppingCart,
+        Mail,
+        Quote,
+        Star,
+        HelpCircle,
+        ChevronDown,
+        Check,
+        X,
+        CreditCard,
+        Target,
+        Lightbulb,
+        TrendingUp,
+        Users,
+        BookOpen,
+        Infinity: LucideInfinity,
+        Menu,
+      }),
+    ),
+  ],
 };

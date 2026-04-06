@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { Card } from '../../shared/card/card';
 import { config } from '../../config';
 import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-faq-section',
   standalone: true,
-  imports: [Card, LucideAngularModule],
+  imports: [LucideAngularModule],
   templateUrl: './faq-section.html',
 })
 export class FAQSection {

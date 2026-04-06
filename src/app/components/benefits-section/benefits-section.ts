@@ -1,17 +1,25 @@
 import { Component } from '@angular/core';
-import { Card } from '../../shared/card/card';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule, Target, Lightbulb, TrendingUp, Users, BookOpen, Infinity as LucideInfinity } from 'lucide-angular';
 
 @Component({
   selector: 'app-benefits-section',
   standalone: true,
-  imports: [Card, LucideAngularModule],
+  imports: [LucideAngularModule],
   templateUrl: './benefits-section.html',
 })
 export class BenefitsSection {
+  icons = {
+    Target,
+    Lightbulb,
+    TrendingUp,
+    Users,
+    BookOpen,
+    Infinity: LucideInfinity,
+  };
+
   benefits = [
     {
-      icon: '🎯',
+      icon: this.icons.Target,
       title: "Planos de Negócio Vencedores",
       description: "Aprenda a criar estratégias sólidas que transformam ideias em negócios lucrativos",
       color: "from-[#FF6B35] to-[#FF8555]",
@@ -19,7 +27,7 @@ export class BenefitsSection {
       result: "Plano completo e validado em 7 dias"
     },
     {
-      icon: '💡',
+      icon: this.icons.Lightbulb,
       title: "Aprendizado Gamificado",
       description: "Conceitos complexos apresentados de forma lúdica e envolvente através do jogo de tabuleiro",
       color: "from-[#FDB813] to-[#FDCA33]",
@@ -27,7 +35,7 @@ export class BenefitsSection {
       result: "Aprenda brincando e retenha 3x mais"
     },
     {
-      icon: '📈',
+      icon: this.icons.TrendingUp,
       title: "Metodologia Comprovada",
       description: "Sistema testado e aprovado por mais de 500 empreendedores de sucesso",
       color: "from-[#1E3A8A] to-[#3B5FBA]",
@@ -35,7 +43,7 @@ export class BenefitsSection {
       result: "Método validado por centenas de casos reais"
     },
     {
-      icon: '👥',
+      icon: this.icons.Users,
       title: "Networking e Comunidade",
       description: "Acesso a uma rede exclusiva de empreendedores para trocar experiências",
       color: "from-[#10B981] to-[#34D399]",
@@ -43,7 +51,7 @@ export class BenefitsSection {
       result: "Comunidade ativa e suporte contínuo"
     },
     {
-      icon: '📖',
+      icon: this.icons.BookOpen,
       title: "Conteúdo Prático e Aplicável",
       description: "Exercícios e casos reais que você pode implementar imediatamente no seu negócio",
       color: "from-[#8B5CF6] to-[#A78BFA]",
@@ -51,7 +59,7 @@ export class BenefitsSection {
       result: "Implemente hoje, veja resultados amanhã"
     },
     {
-      icon: '⏰',
+      icon: this.icons.Infinity,
       title: "Acesso Vitalício + Atualizações",
       description: "Receba todas as atualizações e novos conteúdos gratuitamente, para sempre",
       color: "from-[#EC4899] to-[#F472B6]",

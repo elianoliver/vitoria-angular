@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { Button } from '../../shared/button/button';
-import { Card } from '../../shared/card/card';
-import { Badge } from '../../shared/badge/badge';
-import { config } from '../../config';
 import { LucideAngularModule } from 'lucide-angular';
+import { config } from '../../config';
 
 @Component({
   selector: 'app-pricing-section',
   standalone: true,
-  imports: [Button, Card, Badge, LucideAngularModule],
+  imports: [LucideAngularModule],
   templateUrl: './pricing-section.html',
 })
 export class PricingSection {
