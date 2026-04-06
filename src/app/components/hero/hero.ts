@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Button } from '../../shared/button/button';
-import { Badge } from '../../shared/badge/badge';
-import { config } from '../../config';
 import { LucideAngularModule } from 'lucide-angular';
+
+import { config } from '../../config';
+import { Book3D } from './book3d';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, Button, Badge, LucideAngularModule],
+  imports: [LucideAngularModule, Book3D],
   templateUrl: './hero.html',
 })
 

@@ -1,21 +1,19 @@
-import { CommonModule, DOCUMENT } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 import { Component, Inject, signal } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 
 import { config } from '../../config';
-import { Button } from '../../shared/button/button';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, Button, LucideAngularModule],
+  imports: [LucideAngularModule],
   templateUrl: './header.html',
 })
 export class Header {
   mobileMenuOpen = signal(false);
 
   menuItems = [
-    { label: 'Início', href: '#hero' },
     { label: 'Depoimentos', href: '#depoimentos' },
     { label: 'Benefícios', href: '#beneficios' },
     { label: 'Conteúdo', href: '#preview' },

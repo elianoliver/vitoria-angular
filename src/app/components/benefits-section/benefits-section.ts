@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Card } from '../../shared/card/card';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-benefits-section',
   standalone: true,
-  imports: [CommonModule, Card],
+  imports: [Card, LucideAngularModule],
   templateUrl: './benefits-section.html',
 })
 export class BenefitsSection {

@@ -1,19 +1,19 @@
 <header class="fixed top-4 z-50 w-full">
   <div class="flex justify-center px-4">
-    <div class="container w-full bg-white/90 backdrop-blur shadow-md rounded-2xl">
-      <div class="flex items-center justify-between px-6 py-2">
-        
+    <div class="container max-w-7xl bg-white/90 backdrop-blur shadow-md rounded-full">
+      <div class="flex items-center justify-between px-6 py-3">
+
         <!-- LOGO -->
-        <a class="flex items-center gap-2 group">
+        <a class="flex items-center gap-3" href="#hero">
           <img
             src="/logo.svg"
             alt="Logo Do Tabuleiro ao Mercado"
-            class="h-16 w-auto"
+            class="h-13 w-auto"
             draggable="false"
           />
-          <span class="text-lg font-bold text-gray-900 leading-5"
-            >Do<br />Tabuleiro <br />Ao Mercado</span
-          >
+          <span class="hidden sm:block text-sm font-bold text-gray-900 leading-tight">
+            Do<br> Tabuleiro<br> Ao Mercado
+          </span>
         </a>
 
         <!-- NAV -->
@@ -22,48 +22,44 @@
             <a
               [href]="item.href"
               (click)="handleNavClick($event, item.href)"
-              class="text-gray-700 font-medium hover:text-[#FF6B35] transition-colors"
+              class="text-sm text-gray-700 font-medium hover:text-[#FF6B35] transition-colors"
             >
               {{ item.label }}
             </a>
           }
         </nav>
 
-        <!-- DESKTOP BUTTON -->
-        <app-button (onClick)="handleCTA()" variant="default" class="hidden lg:flex">
-          <lucide-icon name="shopping-cart" class="w-4 h-4 mr-2" />
+        <!-- DESKTOP CTA -->
+        <button
+          (click)="handleCTA()"
+          class="hidden lg:inline-flex items-center justify-center h-10 px-5 rounded-lg cursor-pointer font-semibold transition-all duration-300 bg-gradient-to-r from-[#FF6B35] to-[#FDB813] hover:from-[#FF8555] hover:to-[#FDCA33] text-white shadow-lg hover:shadow-xl hover:scale-105 text-sm gap-2"
+        >
+          <lucide-icon name="shopping-cart" class="w-4 h-4" />
           Comprar Agora
-        </app-button>
+        </button>
 
         <!-- MOBILE MENU BUTTON -->
         <button
           (click)="toggleMobileMenu()"
-          class="lg:hidden p-2 rounded-lg hover:bg-gray-100"
+          class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
           [attr.aria-expanded]="mobileMenuOpen()"
         >
-          <lucide-icon [name]="mobileMenuOpen() ? 'x' : 'menu'" class="w-6 h-6" />
+          <lucide-icon [name]="mobileMenuOpen() ? 'x' : 'menu'" class="w-5 h-5" />
         </button>
       </div>
 
       <!-- Mobile Menu -->
       @if (mobileMenuOpen()) {
-        <nav class="lg:hidden">
+        <nav class="border-t border-gray-100 lg:hidden">
           @for (item of menuItems; track item.href) {
             <a
               [href]="item.href"
               (click)="handleNavClick($event, item.href)"
-              class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 font-medium"
+              class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 font-medium transition-colors"
             >
               {{ item.label }}
             </a>
           }
-
-          <div class="py-3">
-            <app-button (onClick)="handleCTA()" variant="default" class="w-full">
-              <lucide-icon name="shopping-cart" class="w-4 h-4 mr-2" />
-              Comprar Agora
-            </app-button>
-          </div>
         </nav>
       }
     </div>

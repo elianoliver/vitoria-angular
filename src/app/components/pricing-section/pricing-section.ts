@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Button } from '../../shared/button/button';
 import { Card } from '../../shared/card/card';
 import { Badge } from '../../shared/badge/badge';
@@ -9,7 +8,7 @@ import { LucideAngularModule } from 'lucide-angular';
 @Component({
   selector: 'app-pricing-section',
   standalone: true,
-  imports: [CommonModule, Button, Card, Badge, LucideAngularModule],
+  imports: [Button, Card, Badge, LucideAngularModule],
   templateUrl: './pricing-section.html',
 })
 export class PricingSection {

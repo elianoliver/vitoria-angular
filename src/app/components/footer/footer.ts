@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
-import { CommonModule, DOCUMENT } from '@angular/common';
-import { Inject } from '@angular/core';
-import { Button } from '../../shared/button/button';
+import { Component, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { config } from '../../config';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule, Quote } from 'lucide-angular';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, Button, LucideAngularModule],
+  imports: [LucideAngularModule],
   templateUrl: './footer.html',
 })
 export class Footer {
@@ -29,10 +27,6 @@ export class Footer {
   ];
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
-
-  handleCTA() {
-    window.open(config.checkoutUrl, '_blank', 'noopener,noreferrer');
-  }
 
   handleNavClick(event: Event, href: string) {
     event.preventDefault();

@@ -13,13 +13,13 @@ export class Badge {
 
   get badgeClasses(): string {
     const baseClasses = 'inline-flex items-center rounded-lg px-3 py-1 text-sm font-medium';
-    
+
     const variantClasses = {
-      default: 'bg-gradient-to-r from-[#10B981] to-[#34D399] text-white',
+      default: 'bg-[#1E3A8A] text-white',
       secondary: 'bg-white/20 text-white border border-white/30 backdrop-blur-sm',
-      outline: 'border-2 border-gray-300 text-gray-700'
+      outline: 'border-2 border-gray-300 text-gray-700',
     };
-    
+
     return `${baseClasses} ${variantClasses[this.variant]} ${this.class}`;
   }
 }

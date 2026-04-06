@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Card } from '../../shared/card/card';
 import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-preview-section',
   standalone: true,
-  imports: [CommonModule, Card, LucideAngularModule],
+  imports: [Card, LucideAngularModule],
   templateUrl: './preview-section.html',
 })
 export class PreviewSection {

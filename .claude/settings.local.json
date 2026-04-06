@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx ng:*)",
+      "Bash(ng new:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm add:*)",
+      "Bash(mkdir:*)",
+      "Bash(pnpm approve-builds:*)",
+      "Bash(ng build:*)",
+      "Bash(ng serve:*)",
+      "Bash(npm run:*)",
+      "Bash(npx vite:*)",
+      "Bash(jobs)",
+      "Bash(kill %1)",
+      "Bash(npm install:*)",
+      "Bash(node -e ':*)",
+      "Bash(ls dist/Prometal_rewritten/browser/styles-*.css)",
+      "Bash(wc -c dist/Prometal_rewritten/browser/styles-*.css)",
+      "Bash(head -c 500 dist/Prometal_rewritten/browser/styles-*.css)",
+      "Bash(ls:*)",
+      "Bash(xargs grep:*)",
+      "Bash(rm:*)",
+      "Bash(pnpm list:*)"
+    ]
+  }
+}

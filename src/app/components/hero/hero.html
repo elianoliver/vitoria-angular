@@ -1,89 +1,82 @@
 <section
   id="hero"
-  class="relative min-h-[70vh] md:min-h-screen flex items-center overflow-hidden bg-linear-to-br from-[#1E3A8A] via-[#FF6B35] to-[#FDB813]"
+  class="relative min-h-screen flex items-center bg-linear-to-br from-[#1E3A8A] via-[#FF6B35] to-[#FDB813]"
 >
   <!-- Partículas de fundo decorativas -->
   <div class="absolute inset-0 overflow-hidden">
     <div
-      class="absolute top-20 left-10 w-20 h-20 rounded-full bg-white/25 blur-xl animate-float-particle-1"
+      class="absolute top-[5%] left-[3%] w-[5%] aspect-square rounded-full bg-white/25 blur-xl animate-float-particle-1"
     ></div>
     <div
-      class="absolute top-40 right-20 w-32 h-32 rounded-full bg-[#FDB813]/25 blur-2xl animate-float-particle-2"
+      class="absolute top-[10%] right-[5%] w-[8%] aspect-square rounded-full bg-[#FDB813]/25 blur-2xl animate-float-particle-2"
     ></div>
     <div
-      class="absolute bottom-20 left-1/4 w-24 h-24 rounded-full bg-white/25 blur-xl animate-float-particle-3"
+      class="absolute bottom-[5%] left-[25%] w-[6%] aspect-square rounded-full bg-white/25 blur-xl animate-float-particle-3"
     ></div>
   </div>
 
-  <div class="container mx-auto px-4 md:px-6 relative z-10">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <div class="relative mx-auto px-[clamp(1rem,5vw,3.5rem)] z-10 w-full max-w-7xl overflow-visible">
+    <div class="grid lg:grid-cols-2 gap-[clamp(2.5rem,6vw,6rem)] items-stretch min-h-screen overflow-visible">
       <!-- Conteúdo Textual -->
-      <div class="text-center lg:text-left">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+      <div class="text-center lg:text-left flex flex-col justify-center">
+        <h1 class="font-extrabold text-white leading-tight mb-[clamp(1rem,2vh,1.5rem)]"
+            style="font-size: clamp(2rem, calc(5vw + 0.5rem), 3.75rem);">
           Do Tabuleiro ao
           <span class="relative inline-block">
             <span class="relative z-10">Mercado</span>
-            <span class="absolute -bottom-1.5 rounded-2xl left-0 w-full h-2 bg-[#FDB813]"></span>
+            <span class="absolute -bottom-1.5 rounded-2xl left-0 w-full h-1 bg-[#FDB813]"></span>
           </span>
         </h1>
 
-        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0">
+        <p class="text-white/90 mx-auto lg:mx-0 max-w-xl mb-[clamp(1.5rem,3vh,2rem)]"
+           style="font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);">
           Aprenda empreendedorismo de forma dinâmica e revolucionária através do nosso e-book
           exclusivo
         </p>
 
         <!-- CTA Principal -->
-        <div class="mb-8">
-          <app-button
-            (onClick)="handleCTA()"
-            size="lg"
-            variant="default"
-            class="h-14 px-8 md:px-12 text-base md:text-lg font-bold shadow-2xl hover:shadow-[0_0_40px_rgba(255,107,53,0.5)] transition-all duration-300 hover:scale-105 animate-pulse-glow group"
+        <div class="mb-[clamp(1.5rem,3vh,2rem)]">
+          <button
+            (click)="handleCTA()"
+            class="w-full h-[clamp(3rem,6vh,3.5rem)] px-[clamp(2rem,6vw,3rem)] text-white inline-flex items-center justify-center cursor-pointer rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-gradient-to-r from-[#FF6B35] to-[#FDB813] hover:from-[#FF8555] hover:to-[#FDCA33] shadow-2xl hover:shadow-xl hover:scale-105 group"
+            style="font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1.125rem);"
           >
             GARANTIR MEU E-BOOK
             <lucide-icon
               name="arrow-right"
-              class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
+              class="ml-2 w-[1.25em] h-[1.25em] group-hover:translate-x-1 transition-transform"
             />
-          </app-button>
+          </button>
         </div>
 
         <!-- Trust Badges -->
-        <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-          <app-badge variant="default" class="px-4 py-2">
-            <lucide-icon name="download" class="w-4 h-4 mr-2" />
+        <div class="flex flex-wrap gap-[clamp(0.75rem,2vw,1.25rem)] justify-center lg:justify-center">
+          <span class="inline-flex items-center justify-center rounded-lg px-[clamp(0.75rem,2vw,1rem)] py-[clamp(0.6rem,1.5vh,0.9rem)] text-sm font-medium bg-[#1E3A8A] text-white gap-2">
+            <lucide-icon name="download" class="w-3.5 h-3.5" />
             100% Digital
-          </app-badge>
+          </span>
 
-          <app-badge variant="default" class="px-4 py-2">
-            <lucide-icon name="zap" class="w-4 h-4 mr-2" />
+          <span class="inline-flex items-center justify-center rounded-lg px-[clamp(0.75rem,2vw,1rem)] py-[clamp(0.6rem,1.5vh,0.9rem)] text-sm font-medium bg-[#1E3A8A] text-white gap-2">
+            <lucide-icon name="zap" class="w-3.5 h-3.5" />
             Acesso Imediato
-          </app-badge>
+          </span>
 
-          <app-badge variant="default" class="px-4 py-2">
-            <lucide-icon name="shield-check" class="w-4 h-4 mr-2" />
+          <span class="inline-flex items-center justify-center rounded-lg px-[clamp(0.75rem,2vw,1rem)] py-[clamp(0.6rem,1.5vh,0.9rem)] text-sm font-medium bg-[#1E3A8A] text-white gap-2">
+            <lucide-icon name="shield-check" class="w-3.5 h-3.5" />
             Garantia 7 dias
-          </app-badge>
+          </span>
         </div>
       </div>
 
-      <!-- Imagem do E-book -->
-      <div class="relative flex justify-center lg:justify-end">
-        <div class="relative w-full  animate-float-ebook">
-          <!-- Placeholder para imagem do e-book -->
-          <img
-            src="/book.png"
-            alt="Logo Do Tabuleiro ao Mercado"
-            class="w-full"
-            draggable="false"
-          />
-        </div>
+      <!-- 3D Book Viewer -->
+      <div class="hidden relative lg:flex items-center justify-center lg:min-h-[800px] min-h-[600px] overflow-visible">
+        <app-book3d class="relative w-full h-full max-w-[500px] aspect-[5/6]"></app-book3d>
       </div>
     </div>
   </div>
 
   <!-- Indicador de scroll -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-scroll-indicator">
+  <div class="absolute bottom-[clamp(2rem,5vh,4rem)] left-1/2 -translate-x-1/2 animate-scroll-indicator">
     <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
       <div class="w-1.5 h-1.5 bg-white rounded-full animate-scroll-dot"></div>
     </div>
