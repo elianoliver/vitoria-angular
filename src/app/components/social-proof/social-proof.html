@@ -17,12 +17,12 @@
       @for (testimonial of testimonials; track testimonial.name) {
         <div class="rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white border border-gray-100">
           <!-- Ícone de quote -->
-          <lucide-icon name="quote" class="w-8 h-8 text-[#FF6B35]/20 mb-3" />
+          <svg lucideQuote class="w-8 h-8 text-[#FF6B35]/20 mb-3" />
 
           <!-- Rating -->
           <div class="flex gap-0.5 mb-3">
             @for (star of [1,2,3,4,5]; track star) {
-              <lucide-icon name="star" class="w-4 h-4 fill-[#FDB813] text-[#FDB813]" />
+              <svg lucideStar class="w-4 h-4 fill-[#FDB813] text-[#FDB813]" />
             }
           </div>
 
@@ -34,7 +34,7 @@
 
           <!-- Autor -->
           <div class="flex items-center gap-3">
-            <div class="w-11 h-11 shrink-0 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#FDB813] flex items-center justify-center">
+            <div class="w-11 h-11 shrink-0 rounded-full bg-linear-to-br from-[#FF6B35] to-[#FDB813] flex items-center justify-center">
               <span class="text-white font-semibold text-sm">{{ testimonial.initials }}</span>
             </div>
             <div class="min-w-0">

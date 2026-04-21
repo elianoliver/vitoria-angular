@@ -2,7 +2,7 @@
   <div class="mx-auto px-[clamp(1rem,5vw,3.5rem)] w-full max-w-7xl">
     <div class="text-center mb-[clamp(2rem,5vh,4rem)]">
       <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#FDB813] mb-4">
-        <lucide-icon name="help-circle" class="w-7 h-7 text-white" />
+        <svg lucideHelpCircle class="w-7 h-7 text-white" />
       </div>
       <h2 class="font-extrabold text-gray-900 mb-4"
           style="font-size: clamp(1.75rem, 4vw + 0.25rem, 3rem);">
@@ -26,11 +26,7 @@
               <span class="font-bold text-gray-900 pr-4" style="font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1.125rem);">
                 {{ faq.question }}
               </span>
-              <lucide-icon
-                name="chevron-down"
-                [class.rotate-180]="openFaqs().includes($index)"
-                class="w-5 h-5 text-[#FF6B35] transition-transform shrink-0"
-              />
+              <svg lucideChevronDown [class.rotate-180]="openFaqs().includes($index)" class="w-5 h-5 text-[#FF6B35] transition-transform shrink-0" />
             </button>
             @if (openFaqs().includes($index)) {
               <div class="px-5 pb-5 pt-1 text-gray-700 leading-relaxed"

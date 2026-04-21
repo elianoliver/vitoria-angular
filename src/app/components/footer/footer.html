@@ -6,7 +6,7 @@
         <!-- Sobre -->
         <div>
           <div class="flex items-center gap-2 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#FF6B35] to-[#FDB813] flex items-center justify-center">
+            <div class="w-10 h-10 rounded-lg bg-linear-to-r from-[#FF6B35] to-[#FDB813] flex items-center justify-center">
               <span class="text-white text-xl">📚</span>
             </div>
             <span class="font-bold text-lg">Do Tabuleiro ao Mercado</span>
@@ -57,7 +57,7 @@
               [href]="'mailto:' + config.email"
               class="flex items-center gap-2 text-gray-400 hover:text-[#FF6B35] transition-colors text-sm group"
             >
-              <lucide-icon name="mail" class="w-4 h-4 flex-shrink-0" />
+              <svg lucideMail class="w-4 h-4 shrink-0" />
               <span class="group-hover:underline">
                 {{ config.email }}
               </span>
@@ -72,7 +72,7 @@
                     [href]="social.href"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-gradient-to-br hover:from-[#FF6B35] hover:to-[#FDB813] flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-linear-to-br hover:from-[#FF6B35] hover:to-[#FDB813] flex items-center justify-center transition-all duration-300 hover:scale-110"
                   >
                     <span class="text-white">{{ social.icon }}</span>
                   </a>
@@ -86,7 +86,7 @@
       <!-- Copyright -->
       <div class="pt-8 border-t border-gray-800 text-center">
         <p class="text-gray-400 text-sm">
-          © {{ currentYear }} Do Tabuleiro ao Mercado. Todos os direitos reservados.
+          © {{ currentYear }} Do Tabuleiro ao Mercado. Desenvolvido com ☕ por <a href="https://elian.dev.br/" target="_blank">elian.dev</a>
         </p>
       </div>
     </div>

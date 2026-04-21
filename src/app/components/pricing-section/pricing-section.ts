@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
 import { config } from '../../config';
 
 @Component({
   selector: 'app-pricing-section',
   standalone: true,
-  imports: [LucideAngularModule],
+  imports: [],
   templateUrl: './pricing-section.html',
 })
 export class PricingSection {
@@ -27,7 +26,7 @@ export class PricingSection {
 
   handlePurchase() {
     window.open(config.checkoutUrl, '_blank', 'noopener,noreferrer');
-    
+
     // Google Analytics tracking (se configurado)
     if (config.analytics.enabled && typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'begin_checkout', {

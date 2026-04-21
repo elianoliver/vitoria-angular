@@ -1,17 +1,52 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, importProvidersFrom } from '@angular/core';
-import { LucideAngularModule, ShoppingCart, Menu, X, Check, Star } from 'lucide-angular';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import {
+  provideLucideIcons,
+  LucideShoppingCart,
+  LucideMenu,
+  LucideX,
+  LucideCheck,
+  LucideStar,
+  LucideDownload,
+  LucideArrowRight,
+  LucideZap,
+  LucideShieldCheck,
+  LucideQuote,
+  LucideCreditCard,
+  LucideHelpCircle,
+  LucideMail,
+  LucideChevronDown,
+  LucideTarget,
+  LucideLightbulb,
+  LucideTrendingUp,
+  LucideUsers,
+  LucideBookOpen,
+  LucideInfinity,
+} from '@lucide/angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    importProvidersFrom(
-      LucideAngularModule.pick({
-        ShoppingCart,
-        Menu,
-        X,
-        Check,
-        Star,
-      }),
+    provideLucideIcons(
+      LucideShoppingCart,
+      LucideMenu,
+      LucideX,
+      LucideCheck,
+      LucideStar,
+      LucideDownload,
+      LucideArrowRight,
+      LucideZap,
+      LucideShieldCheck,
+      LucideQuote,
+      LucideCreditCard,
+      LucideHelpCircle,
+      LucideMail,
+      LucideChevronDown,
+      LucideTarget,
+      LucideLightbulb,
+      LucideTrendingUp,
+      LucideUsers,
+      LucideBookOpen,
+      LucideInfinity,
     ),
   ],
 };

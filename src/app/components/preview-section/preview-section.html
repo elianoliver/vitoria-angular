@@ -39,7 +39,7 @@
               </div>
 
               <!-- Indicador -->
-              <lucide-icon name="chevron-down" class="w-5 h-5 text-[#FF6B35] group-hover:translate-x-1 transition-transform shrink-0" />
+              <svg lucideChevronDown class="w-5 h-5 text-[#FF6B35] group-hover:translate-x-1 transition-transform shrink-0" />
             </div>
           }
         </div>
@@ -93,18 +93,14 @@
                       </p>
                     </div>
                   </div>
-                  <lucide-icon
-                    name="chevron-down"
-                    [class.rotate-180]="openChapters().includes(index)"
-                    class="w-5 h-5 text-[#FF6B35] transition-transform shrink-0"
-                  />
+                  <svg lucideChevronDown [class.rotate-180]="openChapters().includes(index)" class="w-5 h-5 text-[#FF6B35] transition-transform shrink-0" />
                 </button>
                 @if (openChapters().includes(index)) {
                   <div class="px-4 pb-4 pt-1">
                     <ul class="space-y-1.5 sm:ml-14">
                       @for (topic of chapter.topics; track topic) {
                         <li class="flex items-start gap-2 text-gray-700" style="font-size: clamp(0.75rem, 1.5vw, 0.875rem);">
-                          <lucide-icon name="check" class="w-4 h-4 text-[#10B981] shrink-0 mt-0.5" />
+                        <svg lucideCheck class="w-4 h-4 text-[#10B981] shrink-0 mt-0.5" />
                           <span>{{ topic }}</span>
                         </li>
                       }

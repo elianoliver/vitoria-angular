@@ -17,8 +17,27 @@
         <div class="rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-white border border-gray-100 group relative overflow-hidden">
           <div class="relative z-10">
             <!-- Ícone -->
-            <div [class]="'w-12 h-12 rounded-xl bg-gradient-to-br ' + benefit.color + ' flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300'">
-              <lucide-icon [img]="benefit.icon" class="text-white w-6 h-6"></lucide-icon>
+            <div [class]="'w-12 h-12 rounded-xl bg-linear-to-br ' + benefit.color + ' flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300'">
+              @switch(benefit.icon) {
+                @case('target') {
+                  <svg lucideTarget class="text-white w-6 h-6"></svg>
+                }
+                @case('lightbulb') {
+                  <svg lucideLightbulb class="text-white w-6 h-6"></svg>
+                }
+                @case('trending-up') {
+                  <svg lucideTrendingUp class="text-white w-6 h-6"></svg>
+                }
+                @case('users') {
+                  <svg lucideUsers class="text-white w-6 h-6"></svg>
+                }
+                @case('book-open') {
+                  <svg lucideBookOpen class="text-white w-6 h-6"></svg>
+                }
+                @case('infinity') {
+                  <svg lucideInfinity class="text-white w-6 h-6"></svg>
+                }
+              }
             </div>
 
             <!-- Título -->

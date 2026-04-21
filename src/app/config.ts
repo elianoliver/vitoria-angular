@@ -19,7 +19,8 @@ export const config = {
   // 🛒 CHECKOUT - CONFIGURAÇÃO OBRIGATÓRIA
   // ============================================
   
-  // URL do checkout da Hotmart - SUBSTITUIR PELA URL REAL
+  // URL do checkout da Hotmart - ⚠️ SUBSTITUIR PELA URL REAL ⚠️
+  // Exemplo: 'https://pay.hotmart.com/SEU_CODIGO_AQUI' → 'https://pay.hotmart.com/ABC123XYZ456'
   checkoutUrl: 'https://pay.hotmart.com/SEU_CODIGO_AQUI',
   
   // ============================================

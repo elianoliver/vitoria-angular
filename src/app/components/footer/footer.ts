@@ -1,12 +1,13 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { config } from '../../config';
-import { LucideAngularModule, Quote } from 'lucide-angular';
+
+
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [LucideAngularModule],
+  imports: [],
   templateUrl: './footer.html',
 })
 export class Footer {

@@ -1,13 +1,12 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, signal } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
-
+import { LucideMenu, LucideX, LucideShoppingCart } from '@lucide/angular';
 import { config } from '../../config';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [LucideAngularModule],
+  imports: [LucideMenu, LucideX, LucideShoppingCart],
   templateUrl: './header.html',
 })
 export class Header {

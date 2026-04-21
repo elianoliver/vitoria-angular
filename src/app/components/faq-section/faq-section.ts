@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { config } from '../../config';
-import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-faq-section',
   standalone: true,
-  imports: [LucideAngularModule],
+  imports: [],
   templateUrl: './faq-section.html',
 })
 export class FAQSection {
