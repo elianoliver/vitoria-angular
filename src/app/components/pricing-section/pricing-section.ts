@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { config } from '../../config';
+import { LucideCreditCard, LucideSmartphone, LucideTicket } from '@lucide/angular';
 
 @Component({
   selector: 'app-pricing-section',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, LucideCreditCard, LucideSmartphone, LucideTicket],
   templateUrl: './pricing-section.html',
 })
 export class PricingSection {
@@ -19,9 +21,9 @@ export class PricingSection {
   ];
 
   paymentMethods = [
-    { name: "Cartão de Crédito", icon: "💳" },
-    { name: "PIX", icon: "📱" },
-    { name: "Boleto", icon: "🎫" }
+    { name: "Cartão de Crédito", iconName: "card" },
+    { name: "PIX", iconName: "pix" },
+    { name: "Boleto", iconName: "ticket" }
   ];
 
   handlePurchase() {

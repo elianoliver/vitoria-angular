@@ -16,7 +16,6 @@ export class Header {
     { label: 'Depoimentos', href: '#depoimentos' },
     { label: 'Benefícios', href: '#beneficios' },
     { label: 'Conteúdo', href: '#preview' },
-    { label: 'Comprar', href: '#comprar' },
     { label: 'FAQ', href: '#faq' },
   ];
 

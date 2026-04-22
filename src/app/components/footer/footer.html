@@ -6,13 +6,17 @@
         <!-- Sobre -->
         <div>
           <div class="flex items-center gap-2 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-linear-to-r from-[#FF6B35] to-[#FDB813] flex items-center justify-center">
-              <span class="text-white text-xl">📚</span>
-            </div>
+            <img
+              src="/logo.svg"
+              alt="Logo Do Tabuleiro ao Mercado"
+              class="h-10 w-auto"
+              draggable="false"
+            />
             <span class="font-bold text-lg">Do Tabuleiro ao Mercado</span>
           </div>
           <p class="text-gray-400 text-sm leading-relaxed">
-            Aprenda empreendedorismo de forma dinâmica e revolucionária através do nosso e-book exclusivo.
+            Aprenda empreendedorismo de forma dinâmica e revolucionária através do nosso e-book
+            exclusivo.
           </p>
         </div>
 
@@ -57,7 +61,7 @@
               [href]="'mailto:' + config.email"
               class="flex items-center gap-2 text-gray-400 hover:text-[#FF6B35] transition-colors text-sm group"
             >
-              <svg lucideMail class="w-4 h-4 shrink-0" />
+              <i class="bi bi-envelope shrink-0" style="font-size: 1rem"></i>
               <span class="group-hover:underline">
                 {{ config.email }}
               </span>
@@ -72,9 +76,19 @@
                     [href]="social.href"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-linear-to-br hover:from-[#FF6B35] hover:to-[#FDB813] flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-linear-to-br hover:from-[#FF6B35] hover:to-[#FDB813] flex items-center justify-center transition-all duration-300 hover:scale-110 text-white"
                   >
-                    <span class="text-white">{{ social.icon }}</span>
+                    @switch (social.iconName) {
+                      @case ('facebook') {
+                        <i class="bi bi-facebook" style="font-size: 1.25rem"></i>
+                      }
+                      @case ('instagram') {
+                        <i class="bi bi-instagram" style="font-size: 1.25rem"></i>
+                      }
+                      @case ('linkedin') {
+                        <i class="bi bi-linkedin" style="font-size: 1.25rem"></i>
+                      }
+                    }
                   </a>
                 }
               </div>
@@ -86,7 +100,8 @@
       <!-- Copyright -->
       <div class="pt-8 border-t border-gray-800 text-center">
         <p class="text-gray-400 text-sm">
-          © {{ currentYear }} Do Tabuleiro ao Mercado. Desenvolvido com ☕ por <a href="https://elian.dev.br/" target="_blank">elian.dev</a>
+          © {{ currentYear }} Do Tabuleiro ao Mercado. Desenvolvido com ☕ por
+          <a href="https://elian.dev.br/" target="_blank">elian.dev</a>
         </p>
       </div>
     </div>

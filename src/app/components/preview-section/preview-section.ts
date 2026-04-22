@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 
-import { LucideCheck, LucideChevronDown } from '@lucide/angular';
+import { LucideCheck, LucideChevronDown, LucideFileText, LucideBookOpen } from '@lucide/angular';
 
 @Component({
   selector: 'app-preview-section',
   standalone: true,
-  imports: [LucideCheck, LucideChevronDown],
+  imports: [LucideCheck, LucideChevronDown, LucideFileText, LucideBookOpen],
   templateUrl: './preview-section.html',
 })
 export class PreviewSection {

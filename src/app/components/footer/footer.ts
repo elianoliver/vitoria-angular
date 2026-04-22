@@ -1,13 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { config } from '../../config';
-
-
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './footer.html',
 })
 export class Footer {
@@ -22,9 +21,9 @@ export class Footer {
   ];
 
   socialLinks = [
-    { name: 'Facebook', href: config.social.facebook, icon: '📘' },
-    { name: 'Instagram', href: config.social.instagram, icon: '📷' },
-    { name: 'LinkedIn', href: config.social.linkedin, icon: '💼' },
+    { name: 'Facebook', href: config.social.facebook, iconName: 'facebook' },
+    { name: 'Instagram', href: config.social.instagram, iconName: 'instagram' },
+    { name: 'LinkedIn', href: config.social.linkedin, iconName: 'linkedin' },
   ];
 
   constructor(@Inject(DOCUMENT) private document: Document) {}

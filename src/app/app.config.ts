@@ -21,6 +21,14 @@ import {
   LucideUsers,
   LucideBookOpen,
   LucideInfinity,
+  LucideBook,
+  LucideFileText,
+  LucideSmartphone,
+  LucideTicket,
+  LucideShare2,
+  LucideCamera,
+  LucideBriefcase,
+  LucideCircleQuestionMark,
 } from '@lucide/angular';
 
 export const appConfig: ApplicationConfig = {
@@ -47,6 +55,14 @@ export const appConfig: ApplicationConfig = {
       LucideUsers,
       LucideBookOpen,
       LucideInfinity,
+      LucideBook,
+      LucideFileText,
+      LucideSmartphone,
+      LucideTicket,
+      LucideShare2,
+      LucideCamera,
+      LucideBriefcase,
+      LucideCircleQuestionMark,
     ),
   ],
 };

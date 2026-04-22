@@ -24,8 +24,9 @@
       <div class="p-[clamp(1.5rem,4vw,2.5rem)] relative overflow-hidden border-4 border-[#FF6B35]/30 shadow-2xl bg-white rounded-2xl">
         <!-- Badge de oferta -->
         <div class="absolute -top-3 -right-3 animate-rotate-badge">
-          <span class="inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-bold shadow-lg bg-[#1E3A8A] text-white">
-            🔥 Oferta Digital
+          <span class="inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-bold shadow-lg bg-[#1E3A8A] text-white gap-1">
+            <svg lucideZap class="w-4 h-4" />
+            Oferta Digital
           </span>
         </div>
 
@@ -92,7 +93,17 @@
             <div class="flex flex-wrap items-center justify-center gap-2">
               @for (method of paymentMethods; track method.name) {
                 <div class="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 rounded-lg border border-gray-200">
-                  <span class="text-lg">{{ method.icon }}</span>
+                  @switch (method.iconName) {
+                    @case ('card') {
+                      <svg lucideCreditCard class="w-4 h-4 text-gray-700" />
+                    }
+                    @case ('pix') {
+                      <svg lucideSmartphone class="w-4 h-4 text-gray-700" />
+                    }
+                    @case ('ticket') {
+                      <svg lucideTicket class="w-4 h-4 text-gray-700" />
+                    }
+                  }
                   <span class="text-xs font-medium text-gray-700">
                     {{ method.name }}
                   </span>
