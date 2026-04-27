@@ -6,7 +6,7 @@ import { LucideCheck, LucideChevronDown, LucideFileText, LucideBookOpen } from '
   selector: 'app-preview-section',
   standalone: true,
   imports: [LucideCheck, LucideChevronDown, LucideFileText, LucideBookOpen],
-  templateUrl: './preview-section.html',
+  templateUrl: './preview-section.html'
 })
 export class PreviewSection {
   selectedImage = signal<number | null>(null);
@@ -103,9 +103,9 @@ export class PreviewSection {
   toggleChapter(index: number) {
     const current = this.openChapters();
     if (current.includes(index)) {
-      this.openChapters.set(current.filter((i) => i !== index));
+      this.openChapters.set([]);
     } else {
-      this.openChapters.set([...current, index]);
+      this.openChapters.set([index]);
     }
   }
 }

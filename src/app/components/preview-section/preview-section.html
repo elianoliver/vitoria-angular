@@ -6,8 +6,7 @@
         class="font-extrabold text-gray-900 mb-4"
         style="font-size: clamp(1.75rem, 4vw + 0.25rem, 3rem)"
       >
-        Dê uma
-        <span class="text-gradient"> espiada no conteúdo</span>
+        Dê uma <span class="text-gradient"> espiada no conteúdo</span>
       </h2>
       <p
         class="text-gray-600 mx-auto max-w-2xl"
@@ -16,16 +15,16 @@
         Veja o que te espera dentro do e-book
       </p>
     </div>
+
     <!-- Body -->
-    <div class="flex flex-col gap-[clamp(2rem,5vw,4rem)] items-stretch">
+    <div class="flex flex-col gap-[clamp(2rem,5vw,4rem)]">
       <!-- Galeria de Imagens -->
-      <div class="grid lg:grid-cols-3 gap-2 items-start">
+      <div class="grid lg:grid-cols-3 gap-2">
         @for (image of previewImages; track image.title; let index = $index) {
           <div
             (click)="selectImage(index)"
-            class="flex items-center gap-4 cursor-pointer rounded-xl p-4 shadow-xl hover:border-[#FF6B35]/30 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+            class="flex items-center gap-4 cursor-pointer rounded-xl p-4 shadow-md border border-transparent hover:border-[#FF6B35]/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
           >
-            <!-- Thumbnail placeholder -->
             <div
               class="w-20 h-28 bg-linear-to-br from-[#1E3A8A] to-[#FF6B35] rounded-lg shrink-0 relative"
             >
@@ -33,8 +32,6 @@
                 <svg lucideFileText class="w-8 h-8 text-white" />
               </div>
             </div>
-
-            <!-- Informações -->
             <div class="flex-1 min-w-0">
               <h4
                 class="font-bold text-gray-900"
@@ -42,46 +39,34 @@
               >
                 {{ image.title }}
               </h4>
-              <p class="text-xs text-gray-500 mt-0.5">
-                {{ image.description }}
-              </p>
+              <p class="text-xs text-gray-500 mt-0.5">{{ image.description }}</p>
             </div>
-
-            <!-- Indicador -->
-            <svg
-              lucideChevronDown
-              class="w-5 h-5 text-[#FF6B35] group-hover:translate-x-1 transition-transform shrink-0"
-            />
           </div>
         }
       </div>
 
-
-      <div class="grid gric-rows-3">
-        <!-- Titulo -->
-        <h3 class="font-bold text-gray-900 mb-5" style="font-size: clamp(1.25rem, 2.5vw, 1.5rem)">
+      <!-- Índice + Preview -->
+      <div>
+        <h3 class="font-bold text-gray-900 mb-4" style="font-size: clamp(1.25rem, 2.5vw, 1.5rem)">
           Índice Completo do E-book
         </h3>
 
-        <!-- Índice e preview -->
-        <div class="flex flex-row gap-2">
-          <!-- Indice -->
-          <div class="">
+        <div class="grid lg:grid-cols-[1fr_1.2fr] gap-6 items-stretch">
+          <!-- Accordion -->
+          <div class="space-y-2">
             @for (chapter of chapters; track chapter.number; let index = $index) {
               <div
                 class="border border-gray-200 rounded-xl bg-white transition-colors hover:border-[#FF6B35]/30"
               >
                 <button
                   (click)="toggleChapter(index)"
-                  class="w-full px-4 py-4 text-left flex items-center justify-between hover:no-underline"
+                  class="w-full px-4 py-4 text-left flex items-center justify-between"
                 >
-                  <div class="flex items-center gap-3 text-left w-full min-w-0">
+                  <div class="flex items-center gap-3 w-full min-w-0">
                     <div
                       class="w-10 h-10 rounded-full bg-linear-to-br from-[#FF6B35] to-[#FDB813] flex items-center justify-center shrink-0"
                     >
-                      <span class="text-white font-bold text-sm">
-                        {{ chapter.number }}
-                      </span>
+                      <span class="text-white font-bold text-sm">{{ chapter.number }}</span>
                     </div>
                     <div class="flex-1 min-w-0">
                       <h4
@@ -101,57 +86,62 @@
                     class="w-5 h-5 text-[#FF6B35] transition-transform shrink-0"
                   />
                 </button>
-                @if (openChapters().includes(index)) {
-                  <div class="px-4 pb-4 pt-1">
-                    <ul class="space-y-1.5 sm:ml-14">
-                      @for (topic of chapter.topics; track topic) {
-                        <li
-                          class="flex items-start gap-2 text-gray-700"
-                          style="font-size: clamp(0.75rem, 1.5vw, 0.875rem)"
-                        >
-                          <svg lucideCheck class="w-4 h-4 text-[#10B981] shrink-0 mt-0.5" />
-                          <span>{{ topic }}</span>
-                        </li>
-                      }
-                    </ul>
-                  </div>
-                }
+                <div
+                  [class]="
+                    openChapters().includes(index)
+                      ? 'max-h-[500px] opacity-100'
+                      : 'max-h-0 opacity-0'
+                  "
+                  class="px-4 pb-4 pt-1 overflow-hidden transition-all duration-300"
+                >
+                  <ul class="space-y-1.5 sm:ml-14">
+                    @for (topic of chapter.topics; track topic) {
+                      <li
+                        class="flex items-start gap-2 text-gray-700"
+                        style="font-size: clamp(0.75rem, 1.5vw, 0.875rem)"
+                      >
+                        <svg lucideCheck class="w-4 h-4 text-[#10B981] shrink-0 mt-0.5" />
+                        <span>{{ topic }}</span>
+                      </li>
+                    }
+                  </ul>
+                </div>
               </div>
             }
           </div>
 
-          <!-- Preview -->
-          <div class="lg:sticky lg:top-6">
-            <div class="p-3 bg-linear-to-br from-gray-100 to-white border border-gray-200 rounded-xl h-full">
+          <!-- Preview sticky -->
+          <div class="lg:sticky lg:top-6 h-full">
+            <div
+              class="p-3 bg-linear-to-br from-gray-100 to-white border border-gray-200 rounded-xl h-full"
+            >
               <div
-                class="h-full min-h-64 bg-linear-to-br from-[#1E3A8A] via-[#FF6B35] to-[#FDB813] rounded-lg flex items-center justify-center"
+                class="h-full bg-linear-to-br from-[#1E3A8A] via-[#FF6B35] to-[#FDB813] rounded-lg flex items-center justify-center"
               >
-                <div class="text-center text-white p-6">
-                  <div class="mb-3 flex justify-center">
-                    <svg lucideBookOpen class="w-12 h-12 text-white" />
-                  </div>
-                  <p class="font-semibold" style="font-size: clamp(0.875rem, 1.5vw, 1.125rem)">
-                    @if (selectedImage() !== null) {
+                @if (selectedImage() !== null) {
+                  <div class="text-center text-white p-6">
+                    <div class="mb-3 flex justify-center">
+                      <svg lucideBookOpen class="w-12 h-12 text-white" />
+                    </div>
+                    <p class="font-semibold" style="font-size: clamp(0.875rem, 1.5vw, 1.125rem)">
                       {{ previewImages[selectedImage()!].title }}
-                    } @else {
-                      Visualização do E-book
-                    }
-                  </p>
-                </div>
+                    </p>
+                  </div>
+                }
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Total de páginas -->
-        <div
-          class="mt-5 p-3 bg-linear-to-r from-[#FF6B35]/10 to-[#FDB813]/10 rounded-xl border border-[#FF6B35]/20"
-        >
-          <p class="text-center text-gray-700" style="font-size: clamp(0.875rem, 1.5vw, 1rem)">
-            <span class="font-bold text-xl text-gradient">150+ páginas</span>
-            de conteúdo prático e aplicável
-          </p>
-        </div>
+      <!-- Total de páginas -->
+      <div
+        class="p-3 bg-linear-to-r from-[#FF6B35]/10 to-[#FDB813]/10 rounded-xl border border-[#FF6B35]/20"
+      >
+        <p class="text-center text-gray-700" style="font-size: clamp(0.875rem, 1.5vw, 1rem)">
+          <span class="font-bold text-xl text-gradient">150+ páginas</span>
+          de conteúdo prático e aplicável
+        </p>
       </div>
     </div>
   </div>
